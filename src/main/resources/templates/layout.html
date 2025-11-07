@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http//www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${pageTitle} ?: 'Fondation Vallet'"></title>
+
+    <link rel="stylesheet" th:href="@{/css/main.css}">
+</head>
+<body>
+    <header th:fragment="header">
+        <nav style="background: #007bff; color: white; padding: 15px;">
+            <div class="container" style="display: flex; justify-content: space-between">
+                <a th:href="@{/}" style="color: white; text-decoration: none; font-size: 1.5em;">Fondation Vallet</a>
+                <div>
+                    <a th:href="@{/login}" style="color: white; margin-left: 20px;">Espace Lauréat</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div id="content" class="container">
+        <div th:replace="${content}">
+        </div>
+    </div>
+
+    <footer th:fragment="footer" style="text-align: center; padding: 10px; margin-top: 30px; border-top: 1px solid #ccc;">
+        <p>&copy; 2025 Fondation Vallet. Tous droits reserves.</p>
+    </footer>
+
+    <script th:src="@{/js/main.js}"></script>
+</body>
+</html>

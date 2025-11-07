@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org"
+ th:replace="~{fragments/layout :: layout (~{::title}, ~{::section})}">
+<head>
+    <title>Page d'acceeuil officiel</title>
+</head>
+<body>
+    <div id="content">
+        <div th:replace="~{fragments/layout :: header}"></div>
+
+        <section style="padding: 40px; text-align: center; background: white; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+            <h1>Bienvenue sur la plateforme de la Bourse Vallet</h1>
+            <p>Votre portail unique pour le depot de documents et suivi de votre bourse</p>
+
+            <div style="margin-top: 30px; display: flex; justify-content: center; gap: 30px;">
+                <a th:href="@{/login}" style="padding: 15px 30px; background: blue; color: white; text-decoration: none; border-radius: 5px; font-weight: bold;">
+                    Acceder a mon espace
+                </a>
+            </div>
+        </section>
+
+        <section style="margin-top: 50px; text-align: center;">
+            <h2>Prochaine ceremonie : Information importante</h2>
+            <p>La periode de depot des documents ouvrira **dans 14 jours**. Assurez-vous d'avoir tous vos justificatifs academiques prets.</p>
+        </section>
+
+        <div th:replace="~{fragments/layout :: footer}"></div>
+    </div>
+</body>
+</html>

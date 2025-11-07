@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org" 
+      th:replace="~{fragments/layout :: layout (~{::title}, ~{::#content})}"
+>
+<head>
+    <title>Connexion - Espace Laureat</title>
+</head>
+<body>
+    <div id="content">
+        <div th:replace="~{fragments/layout :: header}"></div>
+
+        <section style="max-width: 400px; margin: 40px auto; padding: 30px; background: white; border-radius: 8px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+            <h2 style="text-align: center; color: #007bff;">Connexion Laureat / Administration</h2>
+
+            <form action="#" th:action="@{/login}" method="post">
+                <div style="margin-bottom: 20px;">
+                    <label for="identifiant" style="display: block; margin-bottom: 8px; font-weight: bold;">Identifiant (N Boursier ou Email)</label>
+                    <input type="text" id="identifiant" name="username" required 
+                           style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <label for="motdepasse" style="display: block; margin-bottom: 8px; font-weight: bold;">Mot de passe</label>
+                    <input type="password" id="motdepasse" name="password" required
+                           style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
+                </div>
+                <button type="submit" style="width: 100%; padding: 10px; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 16px;">Se Connecter</button>
+
+                <p style="text-align: center; margin-top: 15px;"><a th:href="@{/forgot-password}" style="color: #007bff; text-decoration: none;">Mot de passe oublie ?</a></p>
+            </form>
+        </section>
+
+        <div th:replace="~{fragments/layout :: footer}"></div>
+    </div>
+</body>
+</html>
